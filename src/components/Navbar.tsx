@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Moon, Sun, Menu, X, Laptop } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import LogoLight from '../assets/corevancetech-horizontal-light.svg';
+import LogoDark from '../assets/corevancetech-horizontal-dark.svg';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,12 +50,16 @@ export function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-            ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg'
-            : 'bg-transparent'
+          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg'
+          : 'bg-transparent'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
+
+
+
+
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -62,9 +68,11 @@ export function Navbar() {
               className="flex items-center"
             >
               <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}>
-                <span className="text-indigo-600 dark:text-indigo-400 tracking-tight font-bold text-xl">
-                  CorevanceTech
-                </span>
+                <img
+                  src={theme === 'dark' ? LogoDark : LogoLight}
+                  alt="Corevance Tech"
+                  className="h-10 w-auto"
+                />
               </a>
             </motion.div>
 

@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
+import LogoDark from '../assets/corevancetech-horizontal-dark.svg';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,7 +28,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6">
-              <span className="text-indigo-400">CorevanceTech</span>
+              <img src={LogoDark} alt="Corevance Tech" className="h-8 w-auto" />
             </div>
             <p className="text-slate-400 mb-6">
               ERPNext Implementation & IT Automation for Growing Businesses
